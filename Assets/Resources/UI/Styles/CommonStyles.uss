@@ -1,0 +1,414 @@
+/* ============================================
+   AI Assistant Chat UI - 编辑器窗口适配版
+   针对小窗口优化的样式
+   ============================================ */
+
+/* 根容器 - 使用绝对定位填充整个窗口 */
+.chat-container {
+    flex-direction: column;
+    flex-grow: 1;
+    flex-shrink: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(32, 33, 35);
+    border-radius: 0;
+    border-width: 0;
+}
+
+/* ============================================
+   Header 区域
+   ============================================ */
+.chat-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 16px;
+    background-color: rgb(52, 53, 65);
+    border-bottom-width: 1px;
+    border-bottom-color: rgba(86, 88, 105, 0.3);
+    min-height: 48px;
+    flex-shrink: 0;
+}
+
+.header-title-container {
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.chat-title {
+    font-size: 16px;
+    color: rgb(236, 236, 241);
+    -unity-font-style: bold;
+}
+
+.model-badge {
+    font-size: 11px;
+    color: rgba(172, 172, 190, 0.8);
+    margin-top: 2px;
+}
+
+.header-buttons {
+    flex-direction: row;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.header-btn {
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    margin-left: 4px;
+    background-color: transparent;
+    border-width: 0;
+    border-radius: 4px;
+    color: rgb(172, 172, 190);
+    font-size: 14px;
+    -unity-text-align: middle-center;
+}
+
+.header-btn:hover {
+    background-color: rgba(86, 88, 105, 0.3);
+    color: rgb(236, 236, 241);
+}
+
+.header-btn:active {
+    background-color: rgba(86, 88, 105, 0.5);
+}
+
+.close-btn:hover {
+    background-color: rgba(244, 67, 54, 0.8);
+    color: white;
+}
+
+/* ============================================
+   消息列表区域
+   ============================================ */
+.chat-messages {
+    flex-grow: 1;
+    flex-shrink: 1;
+    background-color: rgb(32, 33, 35);
+    padding: 0;
+    min-height: 50px;
+}
+
+.chat-messages #unity-content-viewport {
+    flex-grow: 1;
+    padding-right: 6px;
+}
+
+.chat-messages #unity-content-container {
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+/* 滚动条样式 */
+.chat-messages .unity-scroller--vertical {
+    width: 6px;
+    margin-right: 2px;
+}
+
+.chat-messages .unity-scroller--vertical .unity-base-slider__tracker {
+    background-color: rgba(86, 88, 105, 0.2);
+    border-radius: 3px;
+    width: 6px;
+}
+
+.chat-messages .unity-scroller--vertical .unity-base-slider__dragger {
+    background-color: rgba(172, 172, 190, 0.4);
+    border-radius: 3px;
+    width: 6px;
+    min-height: 20px;
+}
+
+.chat-messages .unity-scroller--vertical .unity-base-slider__dragger:hover {
+    background-color: rgba(172, 172, 190, 0.6);
+}
+
+.messages-container {
+    padding: 12px 16px;
+    flex-direction: column;
+    flex-grow: 0;
+    flex-shrink: 0;
+    justify-content: flex-start;
+}
+
+/* ============================================
+   消息气泡样式
+   ============================================ */
+.message-bubble {
+    margin: 6px 0;
+    padding: 10px 14px;
+    border-radius: 10px;
+    min-width: 50px;
+    max-width: 85%;
+    flex-shrink: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.system-message {
+    align-self: center;
+    background-color: rgba(86, 88, 105, 0.3);
+    border-radius: 10px;
+    border-width: 1px;
+    border-color: rgba(86, 88, 105, 0.4);
+    max-width: 90%;
+}
+
+.user-message {
+    align-self: flex-end;
+    background-color: rgb(16, 163, 127);
+    margin-left: 15%;
+    border-width: 1px;
+    border-color: rgb(13, 148, 115);
+}
+
+.ai-message {
+    align-self: flex-start;
+    background-color: rgb(68, 70, 84);
+    margin-right: 15%;
+    border-width: 1px;
+    border-color: rgba(86, 88, 105, 0.3);
+}
+
+.message-text {
+    color: rgb(236, 236, 241);
+    font-size: 13px;
+    white-space: normal;
+    -unity-text-align: middle-left;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.user-message .message-text {
+    color: white;
+}
+
+/* ============================================
+   输入区域
+   ============================================ */
+.chat-input-area {
+    background-color: rgb(52, 53, 65);
+    padding: 10px 16px;
+    border-top-width: 1px;
+    border-top-color: rgba(86, 88, 105, 0.3);
+    flex-shrink: 0;
+    flex-grow: 0;
+    width: 100%;
+    min-height: 80px;
+}
+
+.input-container {
+    flex-direction: row;
+    align-items: center;
+    background-color: rgb(64, 65, 79);
+    border-radius: 8px;
+    border-width: 1px;
+    border-color: rgba(86, 88, 105, 0.3);
+    padding: 6px 10px;
+    margin-bottom: 8px;
+    min-height: 36px;
+}
+
+.attach-btn {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    padding: 0;
+    margin-right: 8px;
+    background-color: transparent;
+    border-width: 0;
+    border-radius: 4px;
+    color: rgb(172, 172, 190);
+    font-size: 16px;
+    -unity-text-align: middle-center;
+}
+
+.attach-btn:hover {
+    background-color: rgba(86, 88, 105, 0.3);
+    color: rgb(236, 236, 241);
+}
+
+.chat-input {
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-width: 80px;
+    min-height: 24px;
+    max-height: 80px;
+    margin: 0 8px;
+}
+
+.chat-input > .unity-base-text-field__input {
+    background-color: transparent;
+    border-width: 0;
+    color: rgb(236, 236, 241);
+    font-size: 13px;
+    padding: 4px;
+    white-space: normal;
+    -unity-text-align: middle-left;
+}
+
+.chat-input > .unity-base-text-field__input:focus {
+    border-width: 0;
+}
+
+.send-btn {
+    min-width: 50px;
+    height: 30px;
+    padding: 0 14px;
+    margin-left: 6px;
+    flex-shrink: 0;
+    background-color: rgb(16, 163, 127);
+    border-width: 0;
+    border-radius: 6px;
+    color: white;
+    font-size: 13px;
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+}
+
+.send-btn:hover {
+    background-color: rgb(13, 148, 115);
+}
+
+.send-btn:active {
+    background-color: rgb(11, 130, 101);
+}
+
+.send-btn:disabled {
+    background-color: rgba(86, 88, 105, 0.3);
+    color: rgba(172, 172, 190, 0.5);
+}
+
+/* ============================================
+   快捷操作按钮
+   ============================================ */
+.quick-actions {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+    min-height: 28px;
+}
+
+.quick-btn {
+    padding: 4px 12px;
+    margin: 2px 4px;
+    background-color: transparent;
+    border-width: 1px;
+    border-color: rgba(86, 88, 105, 0.4);
+    border-radius: 4px;
+    color: rgb(172, 172, 190);
+    font-size: 11px;
+    min-width: 60px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.quick-btn:hover {
+    background-color: rgba(86, 88, 105, 0.2);
+    border-color: rgba(86, 88, 105, 0.6);
+    color: rgb(236, 236, 241);
+}
+
+.quick-btn:active {
+    background-color: rgba(86, 88, 105, 0.4);
+}
+
+.quick-btn:disabled {
+    opacity: 0.4;
+    color: rgba(172, 172, 190, 0.4);
+    border-color: rgba(86, 88, 105, 0.2);
+}
+
+/* 停止按钮特殊样式 */
+.stop-btn {
+    background-color: rgba(244, 67, 54, 0.15);
+    border-color: rgba(244, 67, 54, 0.5);
+    color: rgb(255, 100, 100);
+}
+
+.stop-btn:hover {
+    background-color: rgba(244, 67, 54, 0.3);
+    border-color: rgba(244, 67, 54, 0.7);
+    color: rgb(255, 120, 120);
+}
+
+.stop-btn:active {
+    background-color: rgba(244, 67, 54, 0.5);
+}
+
+.stop-btn:disabled {
+    background-color: transparent;
+    border-color: rgba(86, 88, 105, 0.2);
+    color: rgba(172, 172, 190, 0.3);
+    opacity: 0.5;
+}
+
+/* ============================================
+   状态栏
+   ============================================ */
+.chat-status {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 16px 8px 16px;
+    background-color: rgba(52, 53, 65, 0.95);
+    border-top-width: 1px;
+    border-top-color: rgba(86, 88, 105, 0.2);
+    min-height: 32px;
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+
+.status-text {
+    font-size: 11px;
+    color: rgb(172, 172, 190);
+}
+
+.model-text {
+    font-size: 10px;
+    color: rgba(172, 172, 190, 0.8);
+}
+
+/* ============================================
+   加载和状态样式
+   ============================================ */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.typing-indicator {
+    background-color: rgb(68, 70, 84);
+    padding: 8px 12px;
+    border-radius: 10px;
+    margin: 6px 0;
+    align-self: flex-start;
+    max-width: 80%;
+    border-width: 1px;
+    border-color: rgba(86, 88, 105, 0.3);
+}
+
+.typing-dots {
+    color: rgb(172, 172, 190);
+    font-size: 13px;
+}
+
+/* ============================================
+   错误消息样式
+   ============================================ */
+.error-message {
+    background-color: rgba(244, 67, 54, 0.15);
+    border-color: rgba(244, 67, 54, 0.5);
+    border-width: 1px;
+}
+
+.error-message .message-text {
+    color: rgb(255, 100, 100);
+}

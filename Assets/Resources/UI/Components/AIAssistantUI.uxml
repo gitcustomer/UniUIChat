@@ -1,0 +1,39 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/Resources/UI/Styles/CommonStyles.uss?fileID=7433441132597879392&amp;guid=325a6eeb8d063394e88f479183dfc5c3&amp;type=3#CommonStyles" />
+    <ui:VisualElement name="root-container" class="chat-container">
+        <ui:VisualElement name="header" class="chat-header">
+            <ui:VisualElement class="header-title-container">
+                <ui:Label name="title-label" text="AI Assistant" class="chat-title" />
+                <ui:Label name="model-label" text="GPT-3.5-turbo" class="model-badge" />
+            </ui:VisualElement>
+            <ui:VisualElement class="header-buttons">
+                <ui:Button name="minimize-button" text="−" tooltip="最小化" class="header-btn" />
+                <ui:Button name="settings-button" text="⚙" tooltip="设置" class="header-btn" />
+                <ui:Button name="close-button" text="✕" tooltip="关闭" class="header-btn close-btn" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:ScrollView name="chat-scroll" horizontal-scroller-visibility="Hidden" vertical-scroller-visibility="Auto" class="chat-messages">
+            <ui:VisualElement name="messages-container" class="messages-container">
+                <ui:VisualElement class="message-bubble system-message">
+                    <ui:Label text="你好！我是 AI 助手，有什么可以帮助你的吗？" class="message-text" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:ScrollView>
+        <ui:VisualElement name="input-area" class="chat-input-area">
+            <ui:VisualElement class="input-container">
+                <ui:Button name="attach-button" text="+" tooltip="附件" class="attach-btn" />
+                <ui:TextField name="prompt-input" multiline="true" placeholder-text="输入消息... (Shift+Enter 换行)" class="chat-input" />
+                <ui:Button name="send-button" text="发送" class="send-btn" />
+            </ui:VisualElement>
+            <ui:VisualElement class="quick-actions">
+                <ui:Button name="clear-chat-button" text="清空对话" class="quick-btn" />
+                <ui:Button name="stop-button" text="停止生成" class="quick-btn stop-btn" />
+                <ui:Button name="export-button" text="导出对话" class="quick-btn" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="status-bar" class="chat-status">
+            <ui:Label name="status-label" text="就绪" class="status-text" />
+            <ui:Label name="model-label-footer" class="model-text" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
